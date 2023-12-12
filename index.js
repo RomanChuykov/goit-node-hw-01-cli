@@ -11,13 +11,12 @@ program
     .option('-p, --phone <type>')
 program.parse()
 const commandLine=program.opts();
-console.log(commandLine);
 
 const contactsActions=async({action, id, name,email, phone})=>{
     switch (action) {
         case "list":
             const allContacts=await functions.listContacts()
-            return console.log(allContacts);
+            return console.table(allContacts);
         case "id":  
             return console.log(await functions.getContactById(id));
         case "remove":

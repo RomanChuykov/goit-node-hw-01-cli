@@ -32,7 +32,7 @@ async function listContacts() {
     }
     const result=allContacts.splice(index,1);
     await updateContacts(allContacts);
-    return result
+    return result[0];
   }
   
   async function addContact(name, email, phone) {
